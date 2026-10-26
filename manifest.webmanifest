@@ -1,0 +1,78 @@
+{
+  "name": "轻衡 · 减脂能量账本",
+  "short_name": "轻衡",
+  "description": "记录饮食与运动，看懂热量缺口，获得室内外运动与食谱建议。",
+  "lang": "zh-CN",
+  "id": "./",
+  "start_url": "./#intake",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#F2EEE4",
+  "theme_color": "#173A32",
+  "categories": ["health", "fitness", "food"],
+  "screenshots": [
+    {
+      "src": "./preview/intake.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "记录今天的饮食与营养"
+    },
+    {
+      "src": "./preview/plan.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "查看热量缺口与运动达标情况"
+    },
+    {
+      "src": "./preview/recipes.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "按剩余预算生成建议食谱"
+    }
+  ],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "记录饮食",
+      "short_name": "记饮食",
+      "url": "./#intake",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "记录运动",
+      "short_name": "记运动",
+      "url": "./#burn",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "看建议",
+      "short_name": "看建议",
+      "url": "./#plan",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

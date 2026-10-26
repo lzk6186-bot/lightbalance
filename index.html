@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173A32">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="轻衡是一款放在手机里的减脂能量账本：记录饮食与运动，看懂热量缺口，获得室内外运动与食谱建议。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="轻衡">
+  <meta name="format-detection" content="telephone=no">
+  <title>轻衡 · 减脂能量账本</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path d="M20.5 3.5C13 3.1 4.8 6.3 4.5 13.4c-.1 3.9 2.6 6.6 6.4 6.5 7-.3 10.2-8.4 9.6-16.4Z" fill="currentColor" stroke="none"/>
+      <path d="M5 19c1.8-4.7 5.2-8.1 10.1-10.2" fill="none" stroke="#F5F2E8" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.6"/><path d="M4.5 21c.4-4.1 3.4-6.2 7.5-6.2s7.1 2.1 7.5 6.2"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.4 16.4 4.1 4.1"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>
+    </symbol>
+    <symbol id="i-home" viewBox="0 0 24 24">
+      <path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/>
+    </symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24">
+      <path d="M12.4 2.8c.8 4-1.5 5.2-3 7.2-1.1 1.4-1.6 2.7-1.6 4.1a4.2 4.2 0 0 0 8.4 0c0-1.2-.4-2.3-1.2-3.3 2.4 1 4 3.3 4 6.1A7 7 0 1 1 5 16.9c0-5.2 4.2-7.8 7.4-14.1Z"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 14H11l-.8 8 9.3-12H13l1-8Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m20 6.5-11 11-5-5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.2v.1"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="17" rx="4"/><path d="M8 8h8"/><path d="M12 12v4"/><path d="M9.5 14.5h5"/>
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4.5 20h15"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0 4 4m-4-4L8 8"/><path d="M4.5 20h15"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6.5 7l1 13h9l1-13"/><path d="M10 11v5M14 11v5"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 7h3.5c5 0 6 10 11 10H21"/><path d="m18 14 3 3-3 3"/><path d="M3 17h3.5c1.6 0 2.8-1 4-2.5"/><path d="M14.5 8c.8-.6 1.7-1 3-1H21"/><path d="m18 4 3 3-3 3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5c.7 4.2 2.3 5.8 6.5 6.5-4.2.7-5.8 2.3-6.5 6.5-.7-4.2-2.3-5.8-6.5-6.5 4.2-.7 5.8-2.3 6.5-6.5Z"/><path d="M19 16.5c.3 1.7 1 2.4 2.7 2.7-1.7.3-2.4 1-2.7 2.7-.3-1.7-1-2.4-2.7-2.7 1.7-.3 2.4-1 2.7-2.7Z"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18c0 5-4 8.5-9 8.5S3 16 3 11Z"/><path d="M8 7.5c0-1.2 1-1.7 1-2.8M12 7.5c0-1.6 1.2-2 1.2-3.2M16 7.5c0-1.2.8-1.7.8-2.6"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2.2-6 4.1 12L16 12h5"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m14.5 5.5 4 4M4 20l1-5L16.5 3.5a1.4 1.4 0 0 1 2 0l2 2a1.4 1.4 0 0 1 0 2L9 19l-5 1Z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5M12 17.2v.1"/></symbol>
+    <symbol id="i-watch" viewBox="0 0 24 24"><rect x="7" y="6" width="10" height="12" rx="3"/><path d="M9 6V3h6v3M9 18v3h6v-3M19 10h2M19 14h2"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6.5 6-2 6 2 6-2v13l-6 2-6-2-6 2v-13Z"/><path d="M9 4.5v13M15 6.5v13"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24">
+      <path d="M4.5 7.5h3l1.3-2h6.4l1.3 2h3a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18V9a1.5 1.5 0 0 1 1.5-1.5Z"/>
+      <circle cx="12" cy="13" r="3.6"/>
+    </symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24">
+      <path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/>
+      <path d="M7.5 12h9M8.5 9.5h7M8.5 14.5h5"/>
+    </symbol>
+    <symbol id="i-install" viewBox="0 0 24 24">
+      <rect x="6" y="2.5" width="12" height="19" rx="2.5"/>
+      <path d="M10 6h4M12 9v6m0 0 2.5-2.5M12 15l-2.5-2.5"/>
+    </symbol>
+    <symbol id="i-share" viewBox="0 0 24 24">
+      <path d="M12 15V3m0 0 3 3m-3-3L9 6"/>
+      <path d="M6 11H4.5v9h15v-9H18"/>
+    </symbol>
+  </svg>
+
+  <div class="page-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+  </div>
+
+  <div class="app-shell" id="app">
+    <header class="topbar">
+      <a class="brand" href="#intake" aria-label="轻衡首页">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg></span>
+        <span class="brand-word">轻衡<small>LIGHTBALANCE</small></span>
+      </a>
+      <button class="profile-button" id="profileButton" type="button" aria-label="打开我的档案与设置">
+        <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+        <span>我的</span>
+      </button>
+    </header>
+
+    <main class="main" id="main">
+      <section class="view" id="view-intake" data-view="intake" aria-labelledby="intakeTitle"></section>
+      <section class="view" id="view-burn" data-view="burn" aria-labelledby="burnTitle" hidden></section>
+      <section class="view" id="view-plan" data-view="plan" aria-labelledby="planTitle" hidden></section>
+    </main>
+
+    <nav class="tabbar" aria-label="主要功能">
+      <a class="tab is-active" href="#intake" data-tab="intake" aria-current="page">
+        <span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#i-bowl"></use></svg></span>
+        <span class="tab-label">摄入</span>
+      </a>
+      <a class="tab" href="#burn" data-tab="burn">
+        <span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"></use></svg></span>
+        <span class="tab-label">消耗</span>
+      </a>
+      <a class="tab" href="#plan" data-tab="plan">
+        <span class="tab-icon"><svg class="icon" aria-hidden="true"><use href="#i-compass"></use></svg></span>
+        <span class="tab-label">建议</span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="sheetRoot" class="sheet-root"></div>
+  <div id="onboardingRoot" class="onboarding-root"></div>
+  <div id="toastRoot" class="toast-root" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">轻衡需要开启 JavaScript 才能计算热量与保存记录。</div>
+  </noscript>
+
+  <script src="./js/data.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</body>
+</html>
